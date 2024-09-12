@@ -13,6 +13,7 @@ public class P2_Percobaan3_pertanyaan1_23 {
         System.out.println("Alamat  : Jalan Peltu Sujono Gang Cilung No 35");
         System.out.println("No HP   : 081232168993");
         System.out.println("Hobi    : Mendegarkan Musik");
+    
     }
     }
 }
