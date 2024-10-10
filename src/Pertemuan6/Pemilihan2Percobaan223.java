@@ -4,8 +4,8 @@ public class Pemilihan2Percobaan223 {
     public static void main(String[] args) {
         Scanner input23 = new Scanner(System.in);
         int pilihan_menu;
-        String member;
-        double harga, diskon, total_bayar;
+        String member, jenisPembayaran;
+        double harga = 0, diskon, total_bayar = 0;
 
         System.out.println("-------------------------");
         System.out.println("===== MENU KAFE JTI =====");
@@ -19,6 +19,8 @@ public class Pemilihan2Percobaan223 {
         input23.nextLine();
         System.out.print("Apakah punya member (y/n) ? = ");
         member = input23.nextLine();
+        System.out.print("Jenis pembayaran = ");
+        jenisPembayaran = input23.nextLine();
         System.out.println("-------------------------------------");
 
         if (member.equalsIgnoreCase("y")) {
@@ -41,8 +43,9 @@ public class Pemilihan2Percobaan223 {
             
             total_bayar = harga - (harga * diskon);
             System.out.println("Total bayar setelah diskon = " + total_bayar);
+        
         }
-
+        
         else if (member.equalsIgnoreCase("n")) {
             if (pilihan_menu == 1) {
                 harga = 14000;
@@ -66,6 +69,20 @@ public class Pemilihan2Percobaan223 {
         } else {
             System.out.println("Member tidak valid");
         }
+
+        if (jenisPembayaran.equalsIgnoreCase("QRIS")) {
+            if (member.equalsIgnoreCase("y")) {
+                total_bayar -= 1000;
+                System.out.println("Potongan Rp. 1000 karena pembayaran menggunakan QRIS");
+                System.out.println("Total bayar setelah potongan pembayaran QRIS (jika ada) = " + total_bayar);
+            } else {
+                harga -= 1000;
+                System.out.println("Potongan Rp. 1000 karena pembayaran menggunakan QRIS");
+                System.out.println("Total bayar setelah potongan pembayaran QRIS (jika ada) = " + harga);
+            }
+
+        }
+        
         System.out.println("-------------------------------------");
 
     }
