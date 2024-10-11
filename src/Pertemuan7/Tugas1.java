@@ -37,8 +37,6 @@ public class Tugas1 {
              
             System.out.println("Total harga penjualan tiket: Rp" + totalHarga);
 
-            i++;
-
         } while (true);
 
         System.out.println("Total penjualan tiket: " + totalTiket + " tiket");
