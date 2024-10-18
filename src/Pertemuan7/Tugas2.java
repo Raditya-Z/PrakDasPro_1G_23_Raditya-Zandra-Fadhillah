@@ -8,10 +8,6 @@ public class Tugas2 {
         do {
             System.out.print("Masukkan jenis kendaraan (1 Mobil, 2 Motor, 0 Keluar): ");
             jenis = sc.nextInt();
-    
-            if (jenis == 0) {
-                break;
-            }
 
             if (jenis == 1 || jenis == 2) {
                 System.out.print("Masukkan durasi: ");
@@ -27,7 +23,7 @@ public class Tugas2 {
             }
             System.out.println("Total bayar: Rp" + total);
             
-        } while (true);
+        } while (jenis != 0);
 
         System.out.println("Total bayar: Rp" + total);
     }
