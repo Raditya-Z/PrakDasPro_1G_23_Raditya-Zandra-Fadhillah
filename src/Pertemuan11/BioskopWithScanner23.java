@@ -52,7 +52,11 @@ public class BioskopWithScanner23 {
                 System.out.println("======= DAFTAR PENONTON =======");
                 for (int i = 0; i < penonton.length; i++) {
                     for (int j = 0; j < penonton[i].length; j++) {
+                        if (penonton[i][j] == null) {
+                            penonton[i][j] = "***";       
+                        }
                         System.out.println("Penonton baris" + i + ", " + "kolom" + j + " = " + penonton[i][j]);
+ 
                     }
                 }
             } else if (opsi == 3) {
