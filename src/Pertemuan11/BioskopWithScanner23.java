@@ -6,10 +6,7 @@ public class BioskopWithScanner23 {
 
         int baris, kolom, opsi;
         String nama, next;
-
         String[][] penonton = new String[4][2];
-
-        
 
         while (true) {
             System.out.println("----------------------------");
@@ -25,13 +22,20 @@ public class BioskopWithScanner23 {
 
             if (opsi == 1) {
                 while (true) {
-                    System.out.print("Masukkan nama: ");
+                System.out.print("Masukkan nama: ");
                 nama = sc.nextLine();
                 System.out.print("Masukkan baris: ");
                 baris = sc.nextInt();
                 System.out.print("Masukkan kolom: ");
                 kolom = sc.nextInt();
                 sc.nextLine();
+                if (baris < 1 || baris > 4) {
+                    System.out.println("Baris atau kolom tidak valid! Silahkan masukkan ulang. ");
+                    continue;
+                } else if (kolom < 1 || kolom > 2) {
+                    System.out.println("Baris atau kolom tidak valid! Silahkan masukkan ulang.");
+                    continue;
+                }
                 penonton[baris-1][kolom-1] = nama;
                 System.out.print("Input penonton lainnya? (y/n): ");
                 next = sc.nextLine();
