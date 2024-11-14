@@ -35,6 +35,9 @@ public class BioskopWithScanner23 {
                 } else if (kolom < 1 || kolom > 2) {
                     System.out.println("Baris atau kolom tidak valid! Silahkan masukkan ulang.");
                     continue;
+                } else if (penonton[baris-1][kolom-1] != null) {
+                    System.out.println("Kursi yang dipilih sudah terisi. Silahkan masukkan baris dan kolom kembali.");
+                    continue;
                 }
                 penonton[baris-1][kolom-1] = nama;
                 System.out.print("Input penonton lainnya? (y/n): ");
