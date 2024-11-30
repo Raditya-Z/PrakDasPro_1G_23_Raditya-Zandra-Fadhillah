@@ -28,10 +28,19 @@ public class Kafe23 {
 
     }
 
-    public static int hitungTotalHarga(int pilihanMenu, int banyakItem) {
+    public static int hitungTotalHarga(int pilihanMenu, int banyakItem, String diskon) {
         int[] hargaItems = {15000, 20000, 22000, 12000, 10000, 18000};
 
         int hargaTotal = hargaItems[pilihanMenu - 1] * banyakItem;
+
+        if (diskon.equals("DISKON50")) {
+            hargaTotal = (int) (hargaTotal *0.5);
+        } else if (diskon.equals("DISKON30")) {
+            hargaTotal = (int) (hargaTotal - (hargaTotal * 0.3));
+        } else {
+            System.out.println("Kode Invalid");
+        }
+
         return hargaTotal;
     }
     public static void main(String[] args) {
@@ -40,8 +49,12 @@ public class Kafe23 {
         int pilihanMenu = sc.nextInt();
         System.out.print("Masukkan jumlah item yang ingin dipesan: ");
         int banyakItem = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Masukkan diskon: ");
+        String diskon = sc.nextLine();
 
-        int totalHarga = hitungTotalHarga(pilihanMenu, banyakItem);
+        int totalHarga = hitungTotalHarga(pilihanMenu, banyakItem, diskon);
+
 
         System.out.println("Total harga untuk pesanan Anda: Rp" + totalHarga);
     }
