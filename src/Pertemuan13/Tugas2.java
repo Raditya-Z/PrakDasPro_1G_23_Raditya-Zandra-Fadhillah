@@ -20,7 +20,7 @@ public class Tugas2 {
         System.out.println("\nRekap Penjualan (Tabel):");
         System.out.println("-----------------------------------------------------------------------");
         System.out.print("Menu\t\t");
-        for (int i = 1; i <= 7; i++) {
+        for (int i = 1; i <= dataPenjualan[0].length; i++) {
             System.out.print("Hari " + i + "\t");
         }
         System.out.println();
@@ -40,7 +40,6 @@ public class Tugas2 {
         }
         System.out.println("-----------------------------------------------------------------------");
     }
-
 
     public static void menuPenjualanTertinggi(String[] menu, int[][] dataPenjualan) {
         int maxPenjualan = 0;
@@ -71,9 +70,21 @@ public class Tugas2 {
     }
 
     public static void main(String[] args) {
-        String[] menu = {"Kopi", "Teh", "Es Degan", "Roti Bakar", "Gorengan"};
+        Scanner sc = new Scanner(System.in);
 
-        int hari = 7;
+        System.out.print("Masukkan jumlah menu: ");
+        int jumlahMenu = sc.nextInt();
+        sc.nextLine(); 
+
+        String[] menu = new String[jumlahMenu];
+        System.out.println("\nMasukkan nama menu:");
+        for (int i = 0; i < jumlahMenu; i++) {
+            System.out.print("Menu ke-" + (i + 1) + ": ");
+            menu[i] = sc.nextLine();
+        }
+
+        System.out.print("\nMasukkan jumlah hari: ");
+        int hari = sc.nextInt();
 
         int[][] dataPenjualan = inputDataPenjualan(menu, hari);
 
