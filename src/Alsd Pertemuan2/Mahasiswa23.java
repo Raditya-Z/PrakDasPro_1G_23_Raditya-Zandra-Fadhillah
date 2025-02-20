@@ -1,4 +1,4 @@
-package Alsd Pertemuan2;
+package Alsd_Pertemuan2;
 public class Mahasiswa23 {
         String nama;
         String nim;
@@ -36,4 +36,16 @@ public class Mahasiswa23 {
             return "Kinerja kurang";
         }
     }
+
+    public Mahasiswa23() {
+        
+    }
+
+    public Mahasiswa23(String nm, String nim, double ipk, String kls) {
+        nama = nm;
+        this.nim = nim;
+        this.ipk = ipk;
+        kelas = kls;
+    }
+
 }
