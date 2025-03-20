@@ -46,5 +46,17 @@ public class MahasiswaBerprestasi22 {
             listMhs[idxMin] = listMhs[i];
             listMhs[i] = tmp;
         }
-    } 
+    }
+    
+    void InsertionSort(){
+        for (int i = 1; i < listMhs.length; i++) {
+            Mahasiswa22 temp = listMhs[i];
+            int j = i;
+            while (j>0 && listMhs[j-1].ipk > temp.ipk) {
+                listMhs[j] = listMhs[j-1];
+                j--;
+            }
+            listMhs[j] = temp; 
+        }
+    }
 }
