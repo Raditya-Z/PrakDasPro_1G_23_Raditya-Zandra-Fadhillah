@@ -1,7 +1,7 @@
 public class MahasiswaBerprestasi22 {
     Mahasiswa22 [] listMhs;
     int idx;
-    
+
     MahasiswaBerprestasi22 (int jumlah) {
         listMhs= new Mahasiswa22[jumlah];
     }
@@ -33,4 +33,18 @@ public class MahasiswaBerprestasi22 {
             }
         }
     }
+
+    void selectionSort(){
+        for (int i = 0; i < listMhs.length-1; i++) {
+            int idxMin = i;
+            for (int j = i+1; j < listMhs.length; j++) {
+                if (listMhs[j].ipk < listMhs[idxMin].ipk) {
+                    idxMin = j;
+                }
+            }
+            Mahasiswa22 tmp = listMhs[idxMin];
+            listMhs[idxMin] = listMhs[i];
+            listMhs[i] = tmp;
+        }
+    } 
 }
